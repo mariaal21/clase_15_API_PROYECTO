@@ -2,38 +2,47 @@ const { body } = require("express-validator")
 
 const mostrarNuevoServicio = (req, res) => {
 
-    res.render('./admin/vistaupdate', {
+    res.render('./admin/vistaupdate',{
 
-        titulo: 'crear nuevo servicio'
+        titulo:'crear nuevo servicio'
+
     })
 
 }
 
 
 
-const crearNuevoServicio = async (req, res) => {
 
-    const { servicio, descripcion } = req.body
+const crearNuevoServicio =async (req, res) => {
+
+
+    console.log("hola")
+
+    const data=req.body
+
 
     try {
 
-        const body = { servicio, descripcion }
+        const {servicio, descripcion}= req.body
 
-        const respuesta = await fetch('http://localhost:3000/admin/servicios/crearServicios', {
-            method: 'post',
-            body: JSON.stringify(body),
-            headers: {
-                'content-type': 'application/json'
-            }
-        })
+        const body = {servicio, descripcion}
 
-        const data = await respuesta.json()
+        const respuesta= await fetch('http://localhost:3000/admin/servicios/crearServicio',{
+                method:'post',
+                body:JSON.stringify(body),
+                header:{
+                    'content-type':'aplication/json'
+                }
+            })
 
-        console.log(data)
+            const data = await respuesta.json()
 
-        res.json({ mensaje: servicio })
+            console.log(data)
 
-        // } catch (error) {
+
+            res.redirect("m")
+
+    } catch(error) {
         console.log(error)
 
         return res.status(500).json({
@@ -41,8 +50,6 @@ const crearNuevoServicio = async (req, res) => {
             msg: 'ERROR: no se ha podido crear el servicio.'
         });
 
-    } catch (error) {
-        console.log(error)
 
         return res.status(500).json({
             ok: false,
