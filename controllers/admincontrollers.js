@@ -35,6 +35,13 @@ const crearNuevoServicio =async (req, res) => {
                 }
             })
 
+            // res.render('./admin/vistanuevo', {
+
+            //     titulo: servicio,
+            //     descripcion: descripcion
+
+            // })
+
             const data = await respuesta.json()
 
             console.log(data)
@@ -51,10 +58,10 @@ const crearNuevoServicio =async (req, res) => {
         });
 
 
-        return res.status(500).json({
-            ok: false,
-            msg: 'ERROR: no se ha podido crear el servicio.'
-        });
+        // return res.status(500).json({
+        //     ok: false,
+        //     msg: 'ERROR: no se ha podido crear el servicio.'
+        // });
     }
 
 }
@@ -94,12 +101,12 @@ const crearNuevoServicio =async (req, res) => {
     //        // res.json ({mensaje: servicio})
 
 
-    //         // res.render('./admin/vistanuevo', {
+            // res.render('./admin/vistanuevo', {
 
-    //         //     titulo: servicio,
-    //         //     descripcion: descripcion
+            //     titulo: servicio,
+            //     descripcion: descripcion
 
-    //         // })
+            // })
 
     //     } catch (error) {
     //         console.log(error)
