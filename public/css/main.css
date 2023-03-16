@@ -99,12 +99,13 @@ textarea{
 	resize:none;
 	display:block;
 }
-
-.titulo {
+h1{
     text-align: center;
     background-color: rgb(243, 143, 80);
-    padding: 50px
+    padding: 50px;
+    
 }
+
 /* nav {
     background: var(--light);
     border: 1px solid var(--cosa);
