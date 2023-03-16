@@ -42,11 +42,14 @@ app.use("/", require("./routers/routerFront"));
 
 app.use('/api/v1',require('./routers/apiRouter'));
 
-app.use('/api/v1',require('./routers/apiUsuariosRouter'));
-
+app.use('/api/v1',require('./routers/apiUsuariosRouter'))
 
 app.use('/admin',require('./routers/adminroute'))
-// app.use('/productos',require('./routers/scrapRouter'));
+
+
+
+//app.use('/admin',require('./routers/adminroute/'))
+//app.use('/productos',require('./routers/scrapRouter'));
 
 
 
