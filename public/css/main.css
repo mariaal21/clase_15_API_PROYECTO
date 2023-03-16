@@ -101,7 +101,9 @@ textarea{
 }
 
 .titulo {
-    
+    text-align: center;
+    background-color: rgb(243, 143, 80);
+    padding: 50px
 }
 /* nav {
     background: var(--light);
